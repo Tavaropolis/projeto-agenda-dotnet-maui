@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto_Agenda.MainPage"
+             BindingContext="{StaticResource VM}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    Text="Tema Padrão"
+                    Clicked="TemaPadrao"/>
+                <Button
+                    Text="Tema Escuro"
+                    Clicked="TemaEscuro"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Margin="20">
+                <Entry 
+                Placeholder="Atividade a inserir"
+                Text="{Binding Texto}"
+                ReturnCommand="{Binding InserirCommand}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
+                WidthRequest="500"        
+                />
+                <Entry 
+                Placeholder="Horario"
+                Text="{Binding Horario}"
+                ReturnCommand="{Binding InserirCommand}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
+                WidthRequest="200"
+                />
+            </HorizontalStackLayout>
+
+            <Button
+                Text="Organizar por horário"
+                WidthRequest="300"
+                Margin="20"
+                Command="{Binding OrganizarCommand}"
+                />
+
+            <CollectionView
+            ItemsSource="{Binding Lista}"
+            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Frame
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray100}}">
+                                <Grid ColumnDefinitions="*, Auto, Auto">
+                                    <Label
+                                    Text="{Binding Item}"
+                                    FontSize="20"/>
+                                    <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Horario}"
+                                    FontSize="20"/>
+                                    <Label
+                                    Grid.Column="2"
+                                    FontSize="10"
+                                    TextColor="Gray"
+                                    Text="{Binding Id}"/>
+                                </Grid>
+                            </Frame>
+                            <Button Grid.Column="1"
+                            Text="Apagar"
+                            Command="{Binding Source={StaticResource VM}, Path=ApagarCommand}"
+                            CommandParameter="{Binding}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

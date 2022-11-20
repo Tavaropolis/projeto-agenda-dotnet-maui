@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto_Agenda.DadosDia"
+             BindingContext="{StaticResource VM}"
+             Title="DadosDia">
+    <VerticalStackLayout>
+        <HorizontalStackLayout
+                HorizontalOptions="Center">
+            <Button
+                    Text="Tema Padrão"
+                    Clicked="TemaPadrao"/>
+            <Button
+                    Text="Tema Escuro"
+                    Clicked="TemaEscuro"/>
+        </HorizontalStackLayout>
+        
+        <Image 
+         Source="relogio.PNG"
+         WidthRequest="150"
+         Margin="20"/>
+        
+        <Label
+                Text="{Binding DatetimeRetorno}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+        <Label
+                Text="{Binding DiaDaSemana}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="5"/>
+
+        <Label
+                Text="{Binding Day_of_yearRetorno, StringFormat='Hoje é o dia de número {0}'}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="5"/>
+
+        <Label
+                Text="{Binding Week_numberRetorno, StringFormat='Esta é a semana de número {0}'}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="5"/>
+    </VerticalStackLayout>
+</ContentPage>
