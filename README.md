@@ -9,6 +9,8 @@ Esta tela é a tela inicial do programa. Ela possui dois campos de entrada de te
 
 ![TelaPrincipal-Clara](https://user-images.githubusercontent.com/66395880/206579005-0491d97c-b303-4589-9cfd-7f2040ae601f.PNG)
 
+![TelaPrincipal-Escuro](https://user-images.githubusercontent.com/66395880/206581161-0bea4fc9-a204-4c65-951b-5bc22ecf8a68.PNG)
+
 + ### Dados do dia
 Esta tela exibe os dados do dia (horário, data, dia da semana, dia do ano e semana do ano).
 ![DadosDoDia-Clara](https://user-images.githubusercontent.com/66395880/206579013-9e095cb5-80c7-4da2-9b94-eb2f4ae9c870.PNG)
